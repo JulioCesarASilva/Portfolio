@@ -5,12 +5,17 @@ import TextAnimation from '../public/components/TextAnimation'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-
+  const colors = ["#FC0DBF", "#FFF", "#C900E6", "#9B0DFC", "#560CF2"]
   return (
     <>
       <Head>
         <title>Julio Cesar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>{`
+            :root {
+              --color-default: ${colors[Math.floor(Math.random() * 5)]};
+            } 
+          `}</style>
       </Head>
       <Header />
       <main>

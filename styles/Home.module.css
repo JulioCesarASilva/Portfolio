@@ -30,7 +30,7 @@
     column-gap: 10px;
 }
 
-.particles p div {
+.particles p span {
     text-decoration: underline;
-    text-decoration-color: --color-default;
+    text-decoration-color: var(--color-default);
 }
