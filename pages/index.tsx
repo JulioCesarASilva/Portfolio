@@ -11,7 +11,7 @@ export default function Home() {
       <Head>
         <title>Julio Cesar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{`
+        <style>{` 
             :root {
               --color-default: ${colors[Math.floor(Math.random() * 5)]};
             } 
