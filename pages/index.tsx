@@ -11,7 +11,11 @@ export default function Home() {
       <Head>
         <title>Julio Cesar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{':root { --color-default: ' + colors[Math.floor(Math.random() * 5)] + ';} '}</style>
+        <style>{`
+            :root {
+              --color-default: ${colors[Math.floor(Math.random() * 5)]};
+            } 
+          `}</style>
       </Head>
       <Header />
       <main>
@@ -20,7 +24,7 @@ export default function Home() {
           <div className={styles.info}>
             <h1>Julio Cesar</h1>
             <p>
-              I'm
+              I&apos;m
               <TextAnimation />
             </p>
 

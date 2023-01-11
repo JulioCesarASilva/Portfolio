@@ -4,7 +4,8 @@ export default function TextAnimation() {
     return <Typed
         strings={[
             "One",
-            "Two"
+            "Two",
+            "TODOS"
         ]}
         typeSpeed={100}
         backSpeed={150}
