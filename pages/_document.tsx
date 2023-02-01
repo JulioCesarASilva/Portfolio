@@ -1,7 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import {useEffect, useState} from "react"
+import dynamic from 'next/dynamic';
 
-export default function Document() {
+function Document() {
   const [color, setColor] = useState<number | undefined>(undefined)
 
   useEffect(()=> {
@@ -18,3 +19,7 @@ export default function Document() {
     </Html>
   )
 }
+
+export default dynamic(() => Promise.resolve(Document), {
+  ssr: false,
+});
