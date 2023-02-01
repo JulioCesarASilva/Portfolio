@@ -1,9 +1,10 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import {useMemo, useState} from "react"
+import {useEffect, useState} from "react"
 
 export default function Document() {
-  const [color, setColor] = useState<number>()
-  useMemo(()=> {
+  const [color, setColor] = useState<number | undefined>(undefined)
+
+  useEffect(()=> {
     setColor(Math.floor(Math.random() * 3))
   }, [])
 
