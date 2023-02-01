@@ -15,13 +15,13 @@
 .particles .info {
     position: absolute;
     z-index: 5;
-    color: white;
+    color: var(--color-white-dark);
 }
 
 .particles h1 {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 56px;
+    font-size: 65px;
+    font-style: normal;
+    line-height: 75px;
 }
 
 .particles p {
