@@ -1,25 +1,20 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import {useEffect, useState} from "react"
-import dynamic from 'next/dynamic';
+import { useState, useMemo } from "react"
 
-function Document() {
-  const [color, setColor] = useState<number | undefined>(undefined)
+export default function Document() {
+  const [color, setColor] = useState<number | null>(null)
 
-  useEffect(()=> {
-    setColor(Math.floor(Math.random() * 3))
-  }, [])
+    useMemo(() => {
+        setColor(Math.floor(Math.random() * 3))
+    }, [])
 
   return (
     <Html lang="en">
       <Head />
-      <body data-color={`COLOR-${color}`}>
+      <body data-color={`COLOR-${color?.toString()}`}>
         <Main />
         <NextScript />
       </body>
     </Html>
   )
 }
-
-export default dynamic(() => Promise.resolve(Document), {
-  ssr: false,
-});
