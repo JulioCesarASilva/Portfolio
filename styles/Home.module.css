@@ -34,3 +34,25 @@
     text-decoration: underline;
     text-decoration-color: var(--color-default);
 }
+
+
+.section {
+    height: 100vh; 
+    padding-top: 70px; 
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.section h2 {
+    font-size: 32px;
+    line-height: 35px;
+    font-family: kwhz;
+
+    color: var(--color-default);
+}
+
+.section div {
+    font-family: vcsm;
+    font-size: 17px;
+    line-height: 23px;
+}
