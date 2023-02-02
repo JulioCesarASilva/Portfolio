@@ -39,22 +39,22 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#">
+        <Link onClick={click} href="#tecnologia">
           Tecnologias
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#">
+        <Link onClick={click} href="#tragetoria">
           Tragetoria
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#">
+        <Link onClick={click} href="#projetos">
           Projetos
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#">
+        <Link onClick={click} href="#contato">
           Contato
         </Link>
       </div>
