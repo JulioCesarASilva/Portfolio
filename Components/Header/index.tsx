@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { LinkedinLogo, GithubLogo, InstagramLogo, List, X} from "phosphor-react";
+import { List, X} from "phosphor-react";
 import style from "../../styles/Header.module.css";
 import Link from "next/link";
+
+import {Icons} from "./icons"
 
 export default function Header() {
   const [scroll, setScroll] = useState<boolean>();
@@ -17,7 +19,6 @@ export default function Header() {
     if (top == 0) setScroll(false);
     else if (top > 0) setScroll(true);
   };
-
   const click = function (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     e.preventDefault();
     setOpen(false);
@@ -27,11 +28,7 @@ export default function Header() {
     });
   };
 
-  useEffect(() => {
-    document.body.classList.toggle(style.isOpen);
-  }, [open]);
-
-  const Links = ({ className }: { className?: string }) => (
+const Links = ({ className }: { className?: string }) => (
     <nav className={`${style.item} ${style.nav} ${className ? className : ""}`}>
       <div>
         <Link onClick={click} href="#sobre">
@@ -61,21 +58,10 @@ export default function Header() {
     </nav>
   );
 
-  const Icons = ({ className }: { className?: string }) => (
-    <div
-      className={`${style.item} ${style.icons}  ${className ? className : ""}`}
-    >
-      <Link onClick={click} href="#">
-        <LinkedinLogo size={30} />
-      </Link>
-      <Link onClick={click} href="#">
-        <GithubLogo size={30} />
-      </Link>
-      <Link onClick={click} href="#">
-        <InstagramLogo size={30} />
-      </Link>
-    </div>
-  );
+  useEffect(() => {
+    document.body.classList.toggle(style.isOpen);
+  }, [open]);
+
 
   return (
     <header

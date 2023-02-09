@@ -43,6 +43,19 @@
     padding-right: 3%;
 }
 
+.section.contato svg, .section.contato a {
+    height: 60px;
+    width: 80px;
+}
+
+.section.contato .icons {
+    justify-content: center !important;
+}
+
+.section:last-child {
+    padding-bottom: 150px;
+}
+
 .section h2 {
     font-size: 32px;
     line-height: 35px;

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Projects from "../Components/Projetos";
 import Tecnologias from "../Components/Tecnologias";
 import TimeLine from "../Components/TimeLine";
+import { Icons } from "../Components/Header/icons";
 
 export default function Home() {
   useEffect(() => {
@@ -70,9 +71,9 @@ export default function Home() {
             <Projects />
           </div>
         </section>
-        <section id="contato" className={`${styles.section}`}>
+        <section id="contato" className={`${styles.section} ${styles.contato}`}>
           <h2>Contato</h2>
-          <div>Bla...  Bla... Bla...</div>
+          <div><Icons className={`${styles.icons}`} /></div>
         </section>
       </main>
     </>
