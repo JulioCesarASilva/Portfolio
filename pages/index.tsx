@@ -61,8 +61,8 @@ export default function Home() {
             <Tecnologias />
           </div>
         </section>
-        <section id="tragetoria" className={`${styles.section}`}>
-          <h2>Tragetoria</h2>
+        <section id="trajetoria" className={`${styles.section}`}>
+          <h2>Trajetória</h2>
           <TimeLine />
         </section>
         <section id="projetos" className={`${styles.section} ${styles.project}`}>

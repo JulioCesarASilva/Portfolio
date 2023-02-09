@@ -41,8 +41,8 @@ const Links = ({ className }: { className?: string }) => (
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#tragetoria">
-          Tragetoria
+        <Link onClick={click} href="#trajetoria">
+          Trajetória
         </Link>
       </div>
       <div>
