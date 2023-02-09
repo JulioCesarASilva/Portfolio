@@ -67,3 +67,44 @@ h1 {
           animation: fade-in 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
+.MuiTimelineItem-root::before {
+  content: none !important;
+}
+
+.MuiTimelineItem-root h5, .MuiTimelineItem-root span {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  font-family: vcsm;
+}
+
+.MuiTimelineItem-root h6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+  font-family: vcsm;
+}
+
+.MuiTimeline-root {
+  padding: 0 !important;
+}
+
+.MuiTimelineItem-root p {
+  font-size: 18px !important;
+  line-height: 24px !important;
+  margin-bottom: 0 !important;
+  color: rgb(59, 59, 59);
+  font-family: vcsm;
+}
+.MuiTimelineItem-root li {
+  font-size: 14 !important;
+  line-height: 20px !important;
+  margin-bottom: 0 !important;
+  color: rgb(59, 59, 59);
+  font-family: vcsm;
+  list-style-type: none;
+}
+
+.MuiTimelineDot-root, .MuiTimelineConnector-root {
+  background: var(--color-default) !important;
+}

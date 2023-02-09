@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
 import Projects from "../Components/Projetos";
 import Tecnologias from "../Components/Tecnologias";
+import TimeLine from "../Components/TimeLine";
 
 export default function Home() {
   useEffect(() => {
@@ -61,17 +62,7 @@ export default function Home() {
         </section>
         <section id="tragetoria" className={`${styles.section}`}>
           <h2>Tragetoria</h2>
-          <div>
-            <span>Complette</span>
-            <span></span>
-            <span></span>
-            <span>Meta</span>
-            <span>Elooc.</span>
-            <span></span>
-            <span></span>
-            <span>Corebiz.</span>
-            <span>Expansiva</span>
-          </div>
+          <TimeLine />
         </section>
         <section id="projetos" className={`${styles.section} ${styles.project}`}>
           <h2>Projetos</h2>
