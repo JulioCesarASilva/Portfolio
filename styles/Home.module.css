@@ -46,6 +46,7 @@
 .section.contato svg, .section.contato a {
     height: 60px;
     width: 80px;
+    color: var(--color-default);
 }
 
 .section.contato .icons {
