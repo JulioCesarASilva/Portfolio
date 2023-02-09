@@ -158,14 +158,21 @@
     animation: moveSlideshow 80s linear infinite;
 }
 
+.tech-slideshow > div:first-child img {
+    filter: grayscale(100%);
+}
+
 .tech-slideshow > div:last-child {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
     background-position: 0 -200px;
     animation: moveSlideshow 80s linear infinite;
 }
 
-.tech-slideshow:hover > div:last-child {
+.tech-slideshow > div:last-child img {
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+}
+
+.tech-slideshow > div:last-child  img:hover {
     opacity: 1;
 }
 
