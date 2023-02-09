@@ -3,9 +3,9 @@ import Typed from "react-typed"
 export default function TextAnimation() {
     return <Typed
         strings={[
-            "One",
-            "Two",
-            "TODOS"
+            "Front-end development",
+            "Back-end development",
+            "Full stack development"
         ]}
         typeSpeed={100}
         backSpeed={150}
