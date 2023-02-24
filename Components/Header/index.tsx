@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import {Icons} from "./icons"
 
-export default function Header() {
+export default function Header({socials, name}: {socials: ISocial[], name: string}) {
   const [scroll, setScroll] = useState<boolean>();
   const [open, setOpen] = useState<boolean>(false);
 
@@ -75,17 +75,17 @@ const Links = ({ className }: { className?: string }) => (
               <X size={30} onClick={() => setOpen(false)} />
             </span>
             <Links />
-            <Icons />
+            <Icons socials={socials} />
           </div>
         )}
       </div>
       <Links className={`${style["menu-desk"]}`} />
       <div className={`${style.item} ${style.home}`}>
         <Link onClick={click} className={`${style.title}`} href="#">
-          Julio Cesar
+          {name}
         </Link>
       </div>
-      <Icons className={`${style["menu-desk"]}`} />
-    </header>
+      <Icons socials={socials} className={`${style["menu-desk"]}`} />
+    </header> 
   );
 }

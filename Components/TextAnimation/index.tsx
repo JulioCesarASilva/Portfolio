@@ -1,12 +1,8 @@
 import Typed from "react-typed"
 
-export default function TextAnimation() {
+export default function TextAnimation({func}: {func: string[]}) {
     return <Typed
-        strings={[
-            "Front-end development",
-            "Back-end development",
-            "Full stack development"
-        ]}
+        strings={func}
         typeSpeed={100}
         backSpeed={150}
         loop
