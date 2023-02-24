@@ -60,13 +60,13 @@
 .section h2 {
     font-size: 32px;
     line-height: 35px;
-    font-family: kwhz;
+    font-family: kwhz, sans-serif;
     margin-bottom: 40px;
     color: var(--color-default);
 }
 
 .section div p {
-    font-family: vcsm;
+    font-family: vcsm, sans-serif;
     color: rgb(59, 59, 59);
     font-size: 22px;
     font-style: normal;
@@ -126,7 +126,7 @@
     font-size: 24px;
     line-height: 13px;
     padding-top: 13px;
-    font-family: kwhz;
+    font-family: kwhz, sans-serif;
 }
 
 @media (max-width: 768px) {

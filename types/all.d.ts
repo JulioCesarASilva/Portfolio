@@ -9,6 +9,14 @@ interface IAuthor {
   updatedAt: string
   socials: ISocial[]
   technologies: ITechnologie[]
+  trajectories: ITrajectory[]
+  projects: IProject[]
+}
+
+interface IProject {
+  name: string
+  slug: string
+  image: IImage
 }
 
 interface ISocial {
@@ -21,11 +29,24 @@ interface ITechnologie {
 }
 
 interface IProject {
-    name: string
-    slug: string
-    image: IImage
+  name: string
+  slug: string
+  image: IImage
 }
 
 interface IImage {
+  url: string
+}
+
+interface ITrajectory {
+  role: string
+  start: string
+  finish: string
+  description: string
+  company: ICompany
+}
+
+interface ICompany {
+  name: string
   url: string
 }

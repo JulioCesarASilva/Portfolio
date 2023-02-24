@@ -6,14 +6,18 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import {Box} from "@material-ui/core";
-import timeLineList from "./json";
 
-export default function CustomizedTimeline() {
+export default function CustomizedTimeline({trajectories}: {trajectories: ITrajectory[]}) {
+  // @ts-ignore
+  const compareNumbers = (a: ITrajectory, b: ITrajectory) => new Date(b.start) - new Date(a.start);
+
+  const minhaListaModificada = [...trajectories].sort(compareNumbers);
+
+
   return (
     <>
-      {timeLineList && timeLineList.length > 0 && (
         <Timeline>
-          {timeLineList.map((item, index) => (
+          {minhaListaModificada.map((item, index) => (
             <TimelineItem key={index}>
               <TimelineSeparator>
                 <TimelineDot />
@@ -21,29 +25,22 @@ export default function CustomizedTimeline() {
               </TimelineSeparator>
               <TimelineContent>
                 <Box>
-                  <h5>{item.vaga}</h5>
-                  <h6>{item.empresa}</h6>
+                  <h5>{item.role}</h5>
+                  <h6>{item.company.name}</h6>
                   <span>
-                    <small>{item.de} </small>
+                    {/* @ts-ignore */}
+                    <small>{item.start.toLocaleString("pt-br", {year: 'numeric', month: 'long' })} </small> {// b.toLocaleString("pt-br", {year: 'numeric', month: 'long' })
+                    }
                      — 
-                    <small> {item.ate}</small>
+                    {/* @ts-ignore */}
+                    <small> {!item.finish ? "Até o momento" : item.finish.toLocaleString("pt-br", {year: 'numeric', month: 'long' })}</small>
                   </span>
-                  {
-                    typeof item.desc == "string"  
-                    ? <p>{item.desc}</p>
-                    : item.desc.map((e, index)=> <div key={index}>
-                        <p>{e.info}</p>
-                        <ul>
-                           {e.itens.map((itemInfo, index)=> <li key={index}> — {itemInfo}</li>)}
-                        </ul>
-                    </div>)
-                  }
+                  <div dangerouslySetInnerHTML={{__html: item.description}}></div>
                 </Box>
               </TimelineContent>
             </TimelineItem>
           ))}
         </Timeline>
-      )}
     </>
   );
 }

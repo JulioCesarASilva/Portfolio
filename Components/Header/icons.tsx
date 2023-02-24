@@ -17,7 +17,7 @@ const Icons = ({ className, socials }: { className?: string, socials: ISocial[]}
   >
     {socials.map((item, index)=> {
       return (
-        <a href={item.url} key={index} target="_blank">
+        <a href={item.url} key={index} target="_blank" rel="noreferrer">
           {
             // @ts-ignore
             icon[item.type] 

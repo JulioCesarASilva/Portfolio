@@ -25,6 +25,25 @@ const GET_ALL_AUTHORS = gql`
           }
         }
         func
+        trajectories {
+          role
+          start 
+          finish
+          description
+          company {
+            ... on Company {
+              name
+              url
+            }
+          }
+        }
+        projects {
+          name
+          slug
+          image {
+            url
+          }
+        }
       }
     }
   `
