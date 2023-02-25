@@ -129,6 +129,7 @@ h1 {
 .MuiTimelineItem-root h5, .MuiTimelineItem-root span {
   font-size: 14px;
   line-height: 20px;
+  text-transform: capitalize;
   color: #000;
   font-family: vcsm, sans-serif;
 }
