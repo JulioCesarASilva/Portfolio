@@ -60,13 +60,13 @@
 .section h2 {
     font-size: 32px;
     line-height: 35px;
-    font-family: kwhz;
+    font-family: kwhz, sans-serif;
     margin-bottom: 40px;
     color: var(--color-default);
 }
 
 .section div p {
-    font-family: vcsm;
+    font-family: vcsm, sans-serif;
     color: rgb(59, 59, 59);
     font-size: 22px;
     font-style: normal;
@@ -126,7 +126,7 @@
     font-size: 24px;
     line-height: 13px;
     padding-top: 13px;
-    font-family: kwhz;
+    font-family: kwhz, sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -163,7 +163,7 @@
     transform: translate3d(0, 0, 0);
 }
 
-.tech-slideshow>div img {
+.tech-slideshow>div :is(img, object) {
     height: 100px;
     margin: 0 30px;
 }
@@ -172,7 +172,7 @@
     animation: moveSlideshow 80s linear infinite;
 }
 
-.tech-slideshow > div:first-child img {
+.tech-slideshow > div:first-child :is(img, object) {
     filter: grayscale(100%);
 }
 
@@ -181,12 +181,12 @@
     animation: moveSlideshow 80s linear infinite;
 }
 
-.tech-slideshow > div:last-child img {
+.tech-slideshow > div:last-child :is(img, object) {
     opacity: 0;
     transition: opacity 0.1s ease-out;
 }
 
-.tech-slideshow > div:last-child  img:hover {
+.tech-slideshow > div:last-child  :is(img, object):hover {
     opacity: 1;
 }
 
