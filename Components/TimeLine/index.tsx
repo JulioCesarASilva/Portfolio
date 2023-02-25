@@ -28,12 +28,11 @@ export default function CustomizedTimeline({trajectories}: {trajectories: ITraje
                   <h5>{item.role}</h5>
                   <h6>{item.company.name}</h6>
                   <span>
-                    {/* @ts-ignore */}
-                    <small>{item.start.toLocaleString("pt-br", {year: 'numeric', month: 'long' })} </small> {// b.toLocaleString("pt-br", {year: 'numeric', month: 'long' })
+                    <small>{new Date(item.start).toLocaleString("pt-br", {year: 'numeric', month: 'long' })} </small> {// b.toLocaleString("pt-br", {year: 'numeric', month: 'long' })
                     }
                      — 
                     {/* @ts-ignore */}
-                    <small> {!item.finish ? "Até o momento" : item.finish.toLocaleString("pt-br", {year: 'numeric', month: 'long' })}</small>
+                    <small> {!item.finish ? "Até o momento" : new Date(item.finish).toLocaleString("pt-br", {year: 'numeric', month: 'long' })}</small>
                   </span>
                   <div dangerouslySetInnerHTML={{__html: item.description}}></div>
                 </Box>
