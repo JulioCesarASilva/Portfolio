@@ -1,4 +1,5 @@
 interface IAuthor {
+  __typename: string
   bio: string
   createdAt: string
   id: string
@@ -14,31 +15,35 @@ interface IAuthor {
 }
 
 interface IProject {
+  __typename: string
   name: string
   slug: string
   image: IImage
+  description: string
+  demo: string | null
+  tags: string[]
+  sourceCode: string
+  author: IAuthor | undefined
 }
 
 interface ISocial {
+  __typename: string
   url: string
   type: string
 }
 
 interface ITechnologie {
+  __typename: string
   technologie: string
 }
 
-interface IProject {
-  name: string
-  slug: string
-  image: IImage
-}
-
 interface IImage {
+  __typename: string
   url: string
 }
 
 interface ITrajectory {
+  __typename: string
   role: string
   start: string
   finish: string
@@ -47,6 +52,7 @@ interface ITrajectory {
 }
 
 interface ICompany {
+  __typename: string
   name: string
   url: string
 }

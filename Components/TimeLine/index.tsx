@@ -13,7 +13,6 @@ export default function CustomizedTimeline({trajectories}: {trajectories: ITraje
 
   const minhaListaModificada = [...trajectories].sort(compareNumbers);
 
-
   return (
     <>
         <Timeline>
@@ -31,7 +30,6 @@ export default function CustomizedTimeline({trajectories}: {trajectories: ITraje
                     <small>{new Date(item.start).toLocaleString("pt-br", {year: 'numeric', month: 'long' })} </small> {// b.toLocaleString("pt-br", {year: 'numeric', month: 'long' })
                     }
                      — 
-                    {/* @ts-ignore */}
                     <small> {!item.finish ? "Até o momento" : new Date(item.finish).toLocaleString("pt-br", {year: 'numeric', month: 'long' })}</small>
                   </span>
                   <div dangerouslySetInnerHTML={{__html: item.description}}></div>

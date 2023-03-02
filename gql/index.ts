@@ -1,51 +1,43 @@
 import { gql } from "@apollo/client"
+import {project, author, technologie, trajectory, company, social} from "./props"
 
 const GET_ALL_AUTHORS = gql`
     query GetAuthors {
       authors {
-        bio
-        createdAt
-        id
-        name
-        publishedAt
-        slug
-        updatedAt
+        ${author}
         socials {
-          url
-          type
+          ${social}
         }
         technologies (first: 100){
-          technologie
+          ${technologie}
         }
-        projects {
-          name
-          slug
-          image {
-            url
-          }
-        }
-        func
         trajectories {
-          role
-          start 
-          finish
-          description
+          ${trajectory}
           company {
             ... on Company {
-              name
-              url
+              ${company}
             }
           }
         }
         projects {
-          name
-          slug
-          image {
-            url
-          }
+          ${project}
         }
       }
     }
   `
 
-export { GET_ALL_AUTHORS }
+const GET_PROJECT = gql`
+query GetProject($slug: String) {
+  project(where: {slug: $slug}) {
+    ${project}
+    author {
+      ${author}
+      socials {
+        ${social}
+      }
+    }
+  }
+}
+`
+
+export { GET_ALL_AUTHORS, GET_PROJECT }

@@ -17,22 +17,13 @@ import SectionTrajetoria from "../Components/Sections/trajetoria";
 
 
 export default function Home({author}: { author: IAuthor }) {
-  useEffect(() => {
-    if (document) {
-      document.body.setAttribute(
-        "data-color",
-        `COLOR-${Math.floor(Math.random() * 3)}`
-      );
-    }
-  }, []);
-
   return (
     <>
       <Head>
         <title>{author.name}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header socials={author.socials} name={author.name}/>
+      <Header home={true} socials={author.socials} name={author.name}/>
       <main>
         <SectionInicio func={author.func} name={author.name}/>
         <SectionSobre bio={author.bio}/>
