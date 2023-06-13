@@ -19,6 +19,7 @@
 
 .header.scrollOff *{
     color: var(--color-default);
+    transition: 0.3s all;
 }
 
 .header * {
@@ -77,6 +78,7 @@
     width: 100vw;
     height: 100vh;
     background: var(--color-default);
+    transition: 0.3s all;
     display: flex;
     flex-direction: column;
 }

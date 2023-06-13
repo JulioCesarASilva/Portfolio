@@ -10,10 +10,6 @@ const GET_ALL_AUTHORS = gql`
         publishedAt
         slug
         updatedAt
-        socials {
-          url
-          type
-        }
         technologies (first: 100){
           technologie
         }
@@ -48,4 +44,21 @@ const GET_ALL_AUTHORS = gql`
     }
   `
 
-export { GET_ALL_AUTHORS }
+const GET_PROJECT = gql`
+  query GetProject($slug: String) {
+    project(where: {slug: $slug}) {
+      demo
+      description
+      id
+      name
+      slug
+      sourceCode
+      tags
+      image {
+        url
+      }
+    }
+  }
+`
+
+export { GET_ALL_AUTHORS, GET_PROJECT }

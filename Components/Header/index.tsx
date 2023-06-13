@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import { List, X} from "phosphor-react";
+import { List, X } from "phosphor-react";
 import style from "../../styles/Header.module.css";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
-import {Icons} from "./icons"
+import { Icons } from "./icons"
 
-export default function Header({socials, name}: {socials: ISocial[], name: string}) {
+export default function Header() {
   const [scroll, setScroll] = useState<boolean>();
   const [open, setOpen] = useState<boolean>(false);
+
+  const router = useRouter()
 
   useEffect(() => {
     window.addEventListener("scroll", () => handleNavigation());
@@ -23,35 +26,40 @@ export default function Header({socials, name}: {socials: ISocial[], name: strin
     e.preventDefault();
     setOpen(false);
     const link = (e.target as any).getAttribute("href").replace("/", "");
-    document.querySelector(link == "#" ? "#inicio" : link).scrollIntoView({
-      behavior: "smooth",
-    });
+    console.log(link)
+    if (document?.querySelector(link == "#" ? "#inicio" : link))
+      document.querySelector(link == "#" ? "#inicio" : link).scrollIntoView({
+        behavior: "smooth",
+      });
+    else {
+      router.push((e.target as any).getAttribute("href"))
+    }
   };
 
-const Links = ({ className }: { className?: string }) => (
+  const Links = ({ className }: { className?: string }) => (
     <nav className={`${style.item} ${style.nav} ${className ? className : ""}`}>
       <div>
-        <Link onClick={click} href="#sobre">
+        <Link onClick={click} href="/#sobre">
           Sobre
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#tecnologia">
+        <Link onClick={click} href="/#tecnologia">
           Tecnologias
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#trajetoria">
+        <Link onClick={click} href="/#trajetoria">
           Trajetória
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#projetos">
+        <Link onClick={click} href="/#projetos">
           Projetos
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="#contato">
+        <Link onClick={click} href="/#contato">
           Contato
         </Link>
       </div>
@@ -75,17 +83,17 @@ const Links = ({ className }: { className?: string }) => (
               <X size={30} onClick={() => setOpen(false)} />
             </span>
             <Links />
-            <Icons socials={socials} />
+            <Icons />
           </div>
         )}
       </div>
       <Links className={`${style["menu-desk"]}`} />
       <div className={`${style.item} ${style.home}`}>
-        <Link onClick={click} className={`${style.title}`} href="#">
-          {name}
+        <Link onClick={click} className={`${style.title}`} href="/#">
+          Julio Cesar
         </Link>
       </div>
-      <Icons socials={socials} className={`${style["menu-desk"]}`} />
-    </header> 
+      <Icons className={`${style["menu-desk"]}`} />
+    </header>
   );
 }

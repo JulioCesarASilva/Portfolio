@@ -16,6 +16,7 @@
     position: absolute;
     z-index: 5;
     color: var(--color-white-dark);
+    transition: 0.3s all;
 }
 
 .particles h1 {
@@ -33,6 +34,7 @@
 .particles p span {
     text-decoration: underline;
     text-decoration-color: var(--color-default);
+    transition: 0.3s all;
 }
 
 
@@ -47,6 +49,7 @@
     height: 60px;
     width: 80px;
     color: var(--color-default);
+    transition: 0.3s all;
 }
 
 .section.contato .icons {
@@ -63,6 +66,7 @@
     font-family: kwhz, sans-serif;
     margin-bottom: 40px;
     color: var(--color-default);
+    transition: 0.3s all;
 }
 
 .section div p {
