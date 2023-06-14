@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { List, X } from "phosphor-react";
 import style from "../../styles/Header.module.css";
+import global from "../../styles/Global.module.css";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 
@@ -75,25 +76,27 @@ export default function Header() {
     <header
       className={`${style.header} ${scroll ? style.scrollOff : ""}`}
     >
-      <div className={`${style["menu-mobile"]}`}>
-        <List size={30} onClick={() => setOpen(true)} />
-        {open && (
-          <div className={`${style.menu} fade-in`}>
-            <span>
-              <X size={30} onClick={() => setOpen(false)} />
-            </span>
-            <Links />
-            <Icons />
-          </div>
-        )}
+      <div className={global.container}>
+        <div className={`${style["menu-mobile"]}`}>
+          <List size={30} onClick={() => setOpen(true)} />
+          {open && (
+            <div className={`${style.menu} fade-in`}>
+              <span>
+                <X size={30} onClick={() => setOpen(false)} />
+              </span>
+              <Links />
+              <Icons />
+            </div>
+          )}
+        </div>
+        <Links className={`${style["menu-desk"]}`} />
+        <div className={`${style.item} ${style.home}`}>
+          <Link onClick={click} className={`${style.title}`} href="/#">
+            Julio Cesar
+          </Link>
+        </div>
+        <Icons className={`${style["menu-desk"]}`} />
       </div>
-      <Links className={`${style["menu-desk"]}`} />
-      <div className={`${style.item} ${style.home}`}>
-        <Link onClick={click} className={`${style.title}`} href="/#">
-          Julio Cesar
-        </Link>
-      </div>
-      <Icons className={`${style["menu-desk"]}`} />
     </header>
   );
 }

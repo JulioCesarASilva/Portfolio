@@ -37,6 +37,7 @@ interface IProject {
   sourceCode: string
   tags: string[]
   image: IImage
+  error: number
 }
 
 interface IImage {

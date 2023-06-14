@@ -5,12 +5,12 @@
     width: 100%;
     display: flex;
     align-items: center;
-
+    justify-content: center;
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
     height: 70px;
     padding-left: 3%;
     padding-right: 3%;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 1s ease, box-shadow 1s ease;
 }
 
 .header.scrollOff{
@@ -19,7 +19,7 @@
 
 .header.scrollOff *{
     color: var(--color-default);
-    transition: 0.3s all;
+    transition: 1s all;
 }
 
 .header * {
@@ -78,7 +78,7 @@
     width: 100vw;
     height: 100vh;
     background: var(--color-default);
-    transition: 0.3s all;
+    transition: 1s all;
     display: flex;
     flex-direction: column;
 }

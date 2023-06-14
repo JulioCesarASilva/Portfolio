@@ -163,5 +163,5 @@ h1 {
 
 .MuiTimelineDot-root, .MuiTimelineConnector-root {
   background: var(--color-default) !important;
-  transition: 0.3s all;
+  transition: 1s all;
 }
