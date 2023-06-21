@@ -193,4 +193,7 @@
         height: 80px;
         margin: 0 10px;
     }
+    .tech-slideshow > div  :is(img, object) {
+        filter: grayscale(0);
+    }
 }
