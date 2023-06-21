@@ -8,7 +8,6 @@ export default function SectionTecnologia({ technologies }: { technologies: ITec
     <div>
       <div className={`${styles["tech-slideshow"]}`}>
           <ImageTec technologies={technologies}/>
-          <ImageTec technologies={technologies}/>
       </div>
     </div>
 </section>

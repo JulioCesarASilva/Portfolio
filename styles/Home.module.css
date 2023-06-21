@@ -158,40 +158,22 @@
 }
 
 .tech-slideshow>div {
-    height: 100px;
-    width: max-content;
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
+    display: flex;
+    width: fit-content;
     transform: translate3d(0, 0, 0);
+    animation: moveSlideshow 50s linear infinite;
 }
 
-.tech-slideshow>div :is(img, object) {
+.tech-slideshow > div :is(img, object) {
     height: 100px;
     margin: 0 30px;
-}
-
-.tech-slideshow > div:first-child {
-    animation: moveSlideshow 80s linear infinite;
-}
-
-.tech-slideshow > div:first-child :is(img, object) {
     filter: grayscale(100%);
+    transition: filter 0.1s ease-out;
 }
 
-.tech-slideshow > div:last-child {
-    background-position: 0 -200px;
-    animation: moveSlideshow 80s linear infinite;
-}
-
-.tech-slideshow > div:last-child :is(img, object) {
-    opacity: 0;
-    transition: opacity 0.1s ease-out;
-}
-
-.tech-slideshow > div:last-child  :is(img, object):hover {
-    opacity: 1;
+.tech-slideshow > div  :is(img, object):hover {
+    filter: grayscale(0);
 }
 
 @keyframes moveSlideshow {
