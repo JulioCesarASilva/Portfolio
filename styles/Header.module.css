@@ -11,6 +11,7 @@
     padding-left: 3%;
     padding-right: 3%;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    top: 0;
 }
 
 .header.scrollOff{
@@ -119,4 +120,8 @@
     body.isOpen{
         overflow-y: hidden;
     }
+}
+
+.header + main section {
+    margin-top: 70px;
 }

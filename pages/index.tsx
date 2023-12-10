@@ -1,9 +1,4 @@
 import Head from "next/head";
-import Header from "../Components/Header";
-import styles from "../styles/Home.module.css";
-
-import { useEffect } from "react";
-import TimeLine from "../Components/TimeLine";
 
 import { GetServerSideProps } from "next";
 import { client } from "../lib/apollo";
@@ -20,12 +15,11 @@ export default function Home({author}: { author: IAuthor }) {
   return (
     <>
       <Head>
-        <title>{author.name}</title>
+        <title>Julio Cesar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header home={true} socials={author.socials} name={author.name}/>
       <main>
-        <SectionInicio func={author.func} name={author.name}/>
+        <SectionInicio func={author.func}/>
         <SectionSobre bio={author.bio}/>
         <SectionTecnologia technologies={author.technologies} />
         <SectionTrajetoria trajectories={author.trajectories}/>

@@ -59,7 +59,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
+  scroll-behavior: smooth;
+  transition: all 0.2s;
 }
 
 html,
@@ -74,17 +75,31 @@ body {
 :root {
   --color-white: #fff;
   --color-white-dark: #efefef;
+  --color-default: #000;
 }
 
-body[data-color="COLOR-2"] {
+
+[data-color="COLOR-5"] {
+  --color-default: #48E649;
+}
+
+[data-color="COLOR-4"] {
+  --color-default: #F20C44;
+}
+
+[data-color="COLOR-3"] {
+  --color-default: #3067E6;
+}
+
+[data-color="COLOR-2"] {
   --color-default: #C900E6;
 }
 
-body[data-color="COLOR-1"] {
+[data-color="COLOR-1"] {
   --color-default: #9B0DFC;
 }
 
-body[data-color="COLOR-0"] {
+[data-color="COLOR-0"] {
   --color-default: #560CF2;
 }
 

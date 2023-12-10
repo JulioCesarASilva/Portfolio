@@ -11,7 +11,22 @@ const icon = {
   "Whatsapp": JSX.Element;
 }
 
-const Icons = ({ className, socials }: { className?: string, socials: ISocial[]}) => (
+const socials = [
+  {
+    "url": "https://www.linkedin.com/in/julio-cesar-113b07196/",
+    "type": "Linkedin"
+  },
+  {
+    "url": "https://github.com/JulioCesarASilva",
+    "type": "Github"
+  },
+  {
+    "url": "https://wa.me/5516989994747",
+    "type": "Whatsapp"
+  }
+]
+
+const Icons = ({ className }: { className?: string }) => (
   <div
     className={`${style.item} ${style.icons}  ${className ? className : ""}`}
   >

@@ -45,7 +45,7 @@ export default function Particles() {
             },
             particles: {
                 color: {
-                    value: ["#ffffff", "#560CF2", "#9B0DFC", "#C900E6", "#FC0DBF", "#F20C44"],
+                    value: ["#ffffff", "#560CF2", "#9B0DFC", "#C900E6", "#FC0DBF", "#F20C44", "#48E649"],
                 },
                 links: {
                     color: "#ffffff",
