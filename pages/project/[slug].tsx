@@ -27,17 +27,19 @@ export default function Project(props: IProject) {
 
     return <div className={global.top}>
         <section className={`${styles.section}`}>
-            <div className={`${global.container} ${global.aux}`}>
+            <div className={`${global.container} ${project.container} ${global.aux}`}>
                 <div className={project["image-container"]}>
                     <Image className={project.image} src={props.image?.url} width={900} height={500} alt={props.name} />
                 </div>
-                <h1>{props.name}</h1>
-                { props.tags?.length && <div>
+                <h1 className={`${project.title}`}>{props.name}</h1>
+                { props.tags?.length && <div className={`${project.tag}`}>
                     {props.tags.map((el, i)=> <span key={i}>{el}</span>)}
                 </div>}
-                {props.demo && <Link href={props.demo}>Demo</Link>}
-                {props.sourceCode && <Link href={props.sourceCode}>Source Code</Link>}
-                {props.description && <article>{props.description}</article>}
+                <div className={`${project.containerLinks}`}>
+                    {props.demo && <Link href={props.demo} className={`${project.link}`}>Demo</Link>}
+                    {props.sourceCode && <Link className={`${project.link}`} href={props.sourceCode}>Source Code</Link>}
+                </div>
+                {props.description && <article  className={`${project.description}`}>{props.description}</article>}
             </div>
         </section>
     </div>

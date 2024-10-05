@@ -7,6 +7,7 @@ import { client } from "../lib/apollo"
 import { ApolloProvider } from "@apollo/client"
 
 import '../styles/globals.css'
+import Footer from "../Components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -29,5 +30,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return <ApolloProvider client={client}>
     <Header />
     <Component {...pageProps} />
+    <Footer />
   </ApolloProvider>
 }

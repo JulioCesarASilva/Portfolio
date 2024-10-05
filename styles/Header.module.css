@@ -78,8 +78,8 @@
     width: 100vw;
     height: 100vh;
     background: var(--color-default);
-    transition: 1s all;
     display: flex;
+    transition: background-color 1s ease;
     flex-direction: column;
 }
 
@@ -121,4 +121,16 @@
     body.isOpen{
         overflow-y: hidden;
     }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: var(--color-default);
+    color: #FFF;
+    transition: background-color 1s ease;
+    width: 100%;
+    box-shadow: 0 -2px 3px rgb(0 0 0 / 10%);
 }
