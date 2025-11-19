@@ -33,13 +33,6 @@ const GET_ALL_AUTHORS = gql`
             }
           }
         }
-        projects {
-          name
-          slug
-          image {
-            url
-          }
-        }
       }
     }
   `
@@ -61,4 +54,12 @@ const GET_PROJECT = gql`
   }
 `
 
-export { GET_ALL_AUTHORS, GET_PROJECT }
+const GET_ALL_PROJECTS_SLUGS = gql`
+  query GetAllProjectsSlugs {
+    projects {
+      slug
+    }
+  }
+`
+
+export { GET_ALL_AUTHORS, GET_PROJECT, GET_ALL_PROJECTS_SLUGS }

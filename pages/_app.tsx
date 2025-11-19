@@ -18,12 +18,14 @@ export default function App({ Component, pageProps }: AppProps) {
         `COLOR-${Math.floor(Math.random() * 3)}`
       );
 
-      setInterval(()=> {
+      const interval = setInterval(()=> {
         document.body.setAttribute(
           "data-color",
           `COLOR-${Math.floor(Math.random() * 3)}`
         );
       }, 5 * 5000)
+
+      return () => clearInterval(interval);
     }
   }, []);
 

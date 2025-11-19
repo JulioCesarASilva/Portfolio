@@ -42,23 +42,43 @@
     display: flex;
     gap: 1.25rem;
     margin-bottom: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .link {
-    color: #000;
+    color: var(--color-default);
 }
 
-.demo {
-
+.backButton {
+    color: var(--color-default);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 }
 
-.sourceCode {
-
+.backButton:hover {
+    transform: translateX(-5px);
 }
 
 .description {
     font-family: vcsm, sans-serif;
     font-size: 16px;
+    line-height: 1.8;
+    color: rgb(59, 59, 59);
+}
+
+.description p {
+    margin-bottom: 1rem;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
 }
 
 .image {

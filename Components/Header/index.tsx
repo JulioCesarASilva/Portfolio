@@ -4,7 +4,7 @@ import { List, X } from "phosphor-react";
 import style from "../../styles/Header.module.css";
 import global from "../../styles/Global.module.css";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 import { Icons } from "./icons"
 
@@ -15,7 +15,10 @@ export default function Header() {
   const router = useRouter()
 
   useEffect(() => {
-    window.addEventListener("scroll", () => handleNavigation());
+    window.addEventListener("scroll", handleNavigation);
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
   }, []);
 
   const handleNavigation = () => {
@@ -27,7 +30,6 @@ export default function Header() {
     e.preventDefault();
     setOpen(false);
     const link = (e.target as any).getAttribute("href").replace("/", "");
-    console.log(link)
     if (document?.querySelector(link == "#" ? "#inicio" : link))
       document.querySelector(link == "#" ? "#inicio" : link).scrollIntoView({
         behavior: "smooth",

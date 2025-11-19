@@ -14,9 +14,15 @@ interface IAuthor {
 }
 
 interface IProject {
+  id?: string
   name: string
   slug: string
+  description?: string
+  demo?: string
+  sourceCode?: string
+  tags?: string[]
   image: IImage
+  error?: number
 }
 
 interface ISocial {
@@ -26,18 +32,6 @@ interface ISocial {
 
 interface ITechnologie {
   technologie: string
-}
-
-interface IProject {
-  id: string
-  name: string
-  slug: string
-  description: string
-  demo: string
-  sourceCode: string
-  tags: string[]
-  image: IImage
-  error: number
 }
 
 interface IImage {
