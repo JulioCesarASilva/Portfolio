@@ -17,11 +17,13 @@ Este portfólio foi desenvolvido para apresentar minha trajetória profissional,
 
 ### 🛠️ Tecnologias Utilizadas
 
-- [Next.js](https://nextjs.org/) 13.1.1 - Framework React
-- [TypeScript](https://www.typescriptlang.org/) 4.9.4 - Type safety
+- [Next.js](https://nextjs.org/) 16.4.3 - Framework React
+- [TypeScript](https://www.typescriptlang.org/) 5.9 - Type safety
 - [GraphQL](https://graphql.org/) - API moderna
-- [Apollo Client](https://www.apollographql.com/docs/react/) - Gerenciamento de estado GraphQL
-- [Material-UI](https://mui.com/) - Componentes de UI
+- React 19 - Componentes e hooks
+- Canvas 2D - Fundo de partículas sem biblioteca de animação
+- HTML e CSS Modules - Timeline e ícones SVG locais
+- react-markdown + rehype-raw + rehype-sanitize - Conteúdo do CMS sanitizado
 - [Hygraph](https://hygraph.com/) - CMS Headless
 - CSS Modules - Estilização modular
 
@@ -29,8 +31,8 @@ Este portfólio foi desenvolvido para apresentar minha trajetória profissional,
 
 ### Pré-requisitos
 
-- Node.js 18+
-- npm ou yarn
+- Node.js 22.13+
+- Yarn 1.22.22 (lockfile versionado)
 - Conta no Hygraph (ou outro CMS GraphQL compatível)
 
 ### Instalação
@@ -45,18 +47,14 @@ cd Portfolio
 2. Instale as dependências:
 
 ```bash
-npm install
-# ou
-yarn install
+yarn install --frozen-lockfile
 ```
 
-3. Configure as variáveis de ambiente (veja seção abaixo)
+3. Opcionalmente, copie `.env.example` para `.env.local` e ajuste `HYGRAPH_API_URL`. O endpoint público original é usado por padrão.
 
 4. Execute o servidor de desenvolvimento:
 
 ```bash
-npm run dev
-# ou
 yarn dev
 ```
 
@@ -67,7 +65,12 @@ yarn dev
 - `npm run dev` - Inicia o servidor de desenvolvimento
 - `npm run build` - Cria a build de produção
 - `npm run start` - Inicia o servidor de produção
-- `npm run lint` - Executa o linter
+- `yarn lint` - Executa ESLint
+- `yarn typecheck` - Verifica TypeScript
+- `yarn test` - Testa sanitização do CMS e tratamento de erros GraphQL
+- `yarn format` - Formata o projeto com Prettier
+- `yarn format:check` - Confere a formatação
+- `yarn audit` - Consulta vulnerabilidades conhecidas
 
 ## 📁 Estrutura do Projeto
 
@@ -85,7 +88,7 @@ Portfolio/
 │   └── api/            # API routes
 ├── styles/             # Estilos CSS Modules
 ├── lib/                # Configurações e utilitários
-│   └── apollo.ts       # Cliente Apollo GraphQL
+│   └── graphql.ts      # Consultas GraphQL com fetch nativo
 ├── gql/                # Queries GraphQL
 ├── types/              # Definições TypeScript
 └── public/             # Arquivos estáticos
@@ -132,7 +135,6 @@ O projeto também pode ser deployado em outras plataformas que suportam Next.js:
 - [Next.js Documentation](https://nextjs.org/docs)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [GraphQL Documentation](https://graphql.org/learn/)
-- [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
 - [Hygraph Documentation](https://hygraph.com/docs)
 
 ## 📄 Licença
@@ -142,3 +144,11 @@ Este projeto é de uso pessoal.
 ## 👤 Autor
 
 Desenvolvido por Julio Cesar
+
+## Manutenção
+
+Partículas usam Canvas com limite de 100 pontos e densidade ajustada à tela. A animação pausa fora da tela e em abas ocultas. A preferência por movimento reduzido também desativa digitação e carrossel animados.
+
+As consultas ao CMS usam `fetch` no servidor, com timeout de 10 segundos e sem cache compartilhado. A página inicial mantém SSR e os projetos mantêm ISR de 60 segundos. HTML e Markdown passam pela mesma sanitização antes de renderizar; scripts, handlers, estilos inline e protocolos inseguros são removidos.
+
+O ESLint usa plugins específicos de Next e React Hooks, sem o conjunto legado de plugins de importação. A resolução de `minimatch` força a linha corrigida 11 (GHSA-g3hv-75wg-m249), que mantém os exports usados pelo ESLint e TypeScript ESLint. Reavalie essa resolução ao atualizar essas ferramentas.
