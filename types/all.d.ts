@@ -41,7 +41,7 @@ interface IImage {
 interface ITrajectory {
   role: string;
   start: string;
-  finish: string;
+  finish: string | null;
   description: string;
   company: ICompany;
 }

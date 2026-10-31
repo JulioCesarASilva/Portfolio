@@ -113,6 +113,7 @@ body {
 }
 
 :root {
+  --color-default: #560cf2;
   --color-white: #fff;
   --color-white-dark: #efefef;
 }
@@ -164,48 +165,12 @@ h1 {
   animation: fade-in 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-.MuiTimelineItem-root::before {
-  content: none !important;
-}
-
-.MuiTimelineItem-root h5,
-.MuiTimelineItem-root span {
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: capitalize;
-  color: #000;
-  font-family: vcsm, sans-serif;
-}
-
-.MuiTimelineItem-root h6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #000;
-  font-family: vcsm, sans-serif;
-}
-
-.MuiTimeline-root {
-  padding: 0 !important;
-}
-
-.MuiTimelineItem-root p {
-  font-size: 18px !important;
-  line-height: 24px !important;
-  margin-bottom: 0 !important;
-  color: rgb(59, 59, 59);
-  font-family: vcsm, sans-serif;
-}
-.MuiTimelineItem-root li {
-  font-size: 14 !important;
-  line-height: 20px !important;
-  margin-bottom: 0 !important;
-  color: rgb(59, 59, 59);
-  font-family: vcsm, sans-serif;
-  list-style-type: none;
-}
-
-.MuiTimelineDot-root,
-.MuiTimelineConnector-root {
-  background: var(--color-default) !important;
-  transition: 1s all;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

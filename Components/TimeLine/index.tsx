@@ -1,65 +1,41 @@
-import React from "react";
-import Timeline from "@material-ui/lab/Timeline";
-import TimelineItem from "@material-ui/lab/TimelineItem";
-import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
-import TimelineConnector from "@material-ui/lab/TimelineConnector";
-import TimelineContent from "@material-ui/lab/TimelineContent";
-import TimelineDot from "@material-ui/lab/TimelineDot";
-import { Box } from "@material-ui/core";
+import RichText from "../RichText";
+import styles from "../../styles/Timeline.module.css";
 
-export default function CustomizedTimeline({
+const formatDate = (date: string) =>
+  new Date(date).toLocaleDateString("pt-BR", {
+    year: "numeric",
+    month: "long",
+    timeZone: "UTC",
+  });
+
+export default function Timeline({
   trajectories,
 }: {
   trajectories: ITrajectory[];
 }) {
-  // @ts-ignore
-  const compareNumbers = (a: ITrajectory, b: ITrajectory) =>
-    new Date(b.start) - new Date(a.start);
-
-  const minhaListaModificada = [...trajectories].sort(compareNumbers);
-
+  const sorted = [...trajectories].sort(
+    (a, b) => Date.parse(b.start) - Date.parse(a.start),
+  );
   return (
-    <>
-      <Timeline>
-        {minhaListaModificada.map((item, index) => (
-          <TimelineItem key={index}>
-            <TimelineSeparator>
-              <TimelineDot />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              <Box>
-                <h5>{item.role}</h5>
-                <h6>{item.company.name}</h6>
-                <span>
-                  <small>
-                    {new Date(item.start).toLocaleString("pt-br", {
-                      year: "numeric",
-                      month: "long",
-                    })}{" "}
-                  </small>{" "}
-                  {
-                    // b.toLocaleString("pt-br", {year: 'numeric', month: 'long' })
-                  }
-                  —{/* @ts-ignore */}
-                  <small>
-                    {" "}
-                    {!item.finish
-                      ? "Até o momento"
-                      : new Date(item.finish).toLocaleString("pt-br", {
-                          year: "numeric",
-                          month: "long",
-                        })}
-                  </small>
-                </span>
-                <div
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                ></div>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </>
+    <ol className={styles.timeline}>
+      {sorted.map((item) => (
+        <li
+          className={styles.item}
+          key={`${item.start}-${item.company.name}-${item.role}`}
+        >
+          <h3>{item.role}</h3>
+          <h4>{item.company.name}</h4>
+          <p className={styles.dates}>
+            <time dateTime={item.start}>{formatDate(item.start)}</time> —{" "}
+            {item.finish ? (
+              <time dateTime={item.finish}>{formatDate(item.finish)}</time>
+            ) : (
+              "Até o momento"
+            )}
+          </p>
+          <RichText content={item.description} />
+        </li>
+      ))}
+    </ol>
   );
 }

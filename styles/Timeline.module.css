@@ -1,0 +1,47 @@
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+.item {
+  position: relative;
+  margin-left: 6px;
+  padding: 0 0 32px 28px;
+  border-left: 2px solid var(--color-default);
+  transition: border-color 1s ease;
+  font-family: vcsm, sans-serif;
+}
+.item:last-child {
+  border-color: transparent;
+  padding-bottom: 0;
+}
+.item::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-default);
+  transition: background-color 1s ease;
+}
+.item h3 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.item h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+.item .dates {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.item p {
+  font-size: 18px;
+  line-height: 24px;
+}
+.item ul,
+.item ol {
+  padding-left: 20px;
+}

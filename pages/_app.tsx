@@ -1,10 +1,8 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import type { AppProps } from "next/app";
 
 import Header from "../Components/Header";
-
-import { client } from "../lib/apollo";
-import { ApolloProvider } from "@apollo/client";
 
 import "../styles/globals.css";
 import Footer from "../Components/Footer";
@@ -29,10 +27,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ApolloProvider client={client}>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </ApolloProvider>
+    </>
   );
 }

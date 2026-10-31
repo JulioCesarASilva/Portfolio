@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { List, X } from "phosphor-react";
+import Icon from "../Icons";
 import style from "../../styles/Header.module.css";
 import global from "../../styles/Global.module.css";
 import Link from "next/link";
@@ -8,87 +8,122 @@ import { useRouter } from "next/router";
 
 import { Icons } from "./icons";
 
-export default function Header() {
-  const [scroll, setScroll] = useState<boolean>();
-  const [open, setOpen] = useState<boolean>(false);
-
-  const router = useRouter();
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleNavigation);
-    return () => {
-      window.removeEventListener("scroll", handleNavigation);
-    };
-  }, []);
-
-  const handleNavigation = () => {
-    const top = document.documentElement.scrollTop;
-    if (top == 0) setScroll(false);
-    else if (top > 0) setScroll(true);
-  };
-  const click = function (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    e.preventDefault();
-    setOpen(false);
-    const link = (e.target as any).getAttribute("href").replace("/", "");
-    if (document?.querySelector(link == "#" ? "#inicio" : link))
-      document.querySelector(link == "#" ? "#inicio" : link).scrollIntoView({
-        behavior: "smooth",
-      });
-    else {
-      router.push((e.target as any).getAttribute("href"));
-    }
-  };
-
-  const Links = ({ className }: { className?: string }) => (
+function NavigationLinks({
+  className,
+  onNavigate,
+}: {
+  className?: string;
+  onNavigate: React.MouseEventHandler<HTMLAnchorElement>;
+}) {
+  return (
     <nav className={`${style.item} ${style.nav} ${className ? className : ""}`}>
       <div>
-        <Link onClick={click} href="/#sobre">
+        <Link onClick={onNavigate} href="/#sobre">
           Sobre
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="/#tecnologia">
+        <Link onClick={onNavigate} href="/#tecnologia">
           Tecnologias
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="/#trajetoria">
+        <Link onClick={onNavigate} href="/#trajetoria">
           Trajetória
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="/#projetos">
+        <Link onClick={onNavigate} href="/#projetos">
           Projetos
         </Link>
       </div>
       <div>
-        <Link onClick={click} href="/#contato">
+        <Link onClick={onNavigate} href="/#contato">
           Contato
         </Link>
       </div>
     </nav>
   );
+}
+
+export default function Header() {
+  const [scroll, setScroll] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+
+  const router = useRouter();
 
   useEffect(() => {
-    document.body.classList.toggle(style.isOpen);
+    const handleNavigation = () => setScroll(window.scrollY > 0);
+    handleNavigation();
+    window.addEventListener("scroll", handleNavigation, { passive: true });
+    return () => window.removeEventListener("scroll", handleNavigation);
+  }, []);
+
+  const click = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+      return;
+    setOpen(false);
+    const hash = event.currentTarget.hash;
+    const section =
+      router.pathname === "/"
+        ? document.getElementById(hash.slice(1) || "inicio")
+        : null;
+    if (section) {
+      event.preventDefault();
+      section.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle(style.isOpen, open);
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.classList.remove(style.isOpen);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
   }, [open]);
 
   return (
     <header className={`${style.header} ${scroll ? style.scrollOff : ""}`}>
       <div className={global.container}>
         <div className={`${style["menu-mobile"]}`}>
-          <List size={30} onClick={() => setOpen(true)} />
+          <button
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen(true)}
+          >
+            <Icon name="menu" />
+          </button>
           {open && (
-            <div className={`${style.menu} fade-in`}>
+            <div id="mobile-menu" className={`${style.menu} fade-in`}>
               <span>
-                <X size={30} onClick={() => setOpen(false)} />
+                <button
+                  autoFocus
+                  type="button"
+                  aria-label="Fechar menu"
+                  onClick={() => setOpen(false)}
+                >
+                  <Icon name="close" />
+                </button>
               </span>
-              <Links />
+              <NavigationLinks onNavigate={click} />
               <Icons />
             </div>
           )}
         </div>
-        <Links className={`${style["menu-desk"]}`} />
+        <NavigationLinks
+          onNavigate={click}
+          className={`${style["menu-desk"]}`}
+        />
         <div className={`${style.item} ${style.home}`}>
           <Link onClick={click} className={`${style.title}`} href="/#">
             Julio Cesar

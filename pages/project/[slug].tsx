@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 
-import { client } from "../../lib/apollo";
+import { queryGraphQL } from "../../lib/graphql";
 import { GET_PROJECT, GET_ALL_PROJECTS_SLUGS } from "../../gql";
 
 import global from "../../styles/Global.module.css";
@@ -142,11 +142,8 @@ export const getStaticProps: GetStaticProps = async (ctx: {
       };
     }
 
-    const { data } = await client.query({
-      query: GET_PROJECT,
-      variables: {
-        slug,
-      },
+    const data = await queryGraphQL<{ project: IProject | null }>(GET_PROJECT, {
+      slug,
     });
 
     if (!data || !data.project) {
@@ -171,9 +168,9 @@ export const getStaticProps: GetStaticProps = async (ctx: {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const { data } = await client.query({
-      query: GET_ALL_PROJECTS_SLUGS,
-    });
+    const data = await queryGraphQL<{ projects: { slug: string }[] }>(
+      GET_ALL_PROJECTS_SLUGS,
+    );
 
     const paths =
       data?.projects?.map((project: { slug: string }) => ({

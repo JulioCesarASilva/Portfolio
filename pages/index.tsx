@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { client } from "../lib/apollo";
+import { queryGraphQL } from "../lib/graphql";
 import { GET_ALL_AUTHORS } from "../gql";
 import SectionInicio from "../Components/Sections/inicio";
 import SectionSobre from "../Components/Sections/sobre";
@@ -23,8 +23,9 @@ export default function Home({ author }: { author: IAuthor }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { data } = await client.query({ query: GET_ALL_AUTHORS });
+export const getServerSideProps: GetServerSideProps = async () => {
+  const data = await queryGraphQL<{ authors: IAuthor[] }>(GET_ALL_AUTHORS);
+  if (!data.authors[0]) return { notFound: true };
 
   return {
     props: {

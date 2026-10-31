@@ -1,15 +1,11 @@
 .particles {
+  position: relative;
+  background: #000;
   height: 100vh;
   max-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.particles div:first-child {
-  height: 100%;
-  width: 100%;
-  display: flex;
 }
 
 .particles .info {
@@ -194,5 +190,34 @@
   }
   .tech-slideshow > div :is(img, object) {
     filter: grayscale(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-slideshow {
+    height: auto;
+  }
+  .tech-slideshow > div {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 20px;
+  }
+  .tech-slideshow > div > [aria-hidden="true"] {
+    display: none;
+  }
+}
+@media (max-width: 540px) {
+  .particles h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+  .particles p {
+    font-size: 20px;
+    flex-wrap: wrap;
+  }
+  .particles .info {
+    padding: 0 20px;
   }
 }
