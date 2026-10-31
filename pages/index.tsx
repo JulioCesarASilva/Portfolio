@@ -8,17 +8,15 @@ import SectionContato from "../Components/Sections/contato";
 import SectionProjetos from "../Components/Sections/projetos";
 import SectionTrajetoria from "../Components/Sections/trajetoria";
 
-
-export default function Home({author}: { author: IAuthor }) {
-  
+export default function Home({ author }: { author: IAuthor }) {
   return (
     <>
       <main>
-        <SectionInicio func={author.func} name={author.name}/>
-        <SectionSobre bio={author.bio}/>
+        <SectionInicio func={author.func} name={author.name} />
+        <SectionSobre bio={author.bio} />
         <SectionTecnologia technologies={author.technologies} />
-        <SectionTrajetoria trajectories={author.trajectories}/>
-        <SectionProjetos project={author.projects}/>
+        <SectionTrajetoria trajectories={author.trajectories} />
+        <SectionProjetos project={author.projects} />
         <SectionContato />
       </main>
     </>
@@ -26,12 +24,11 @@ export default function Home({author}: { author: IAuthor }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  const { data } = await client.query({ query: GET_ALL_AUTHORS })
+  const { data } = await client.query({ query: GET_ALL_AUTHORS });
 
   return {
     props: {
-      author: data.authors[0]
-    }
-  }
-}
+      author: data.authors[0],
+    },
+  };
+};

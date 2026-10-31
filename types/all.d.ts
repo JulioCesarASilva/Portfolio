@@ -1,52 +1,52 @@
 interface IAuthor {
-  bio: string
-  createdAt: string
-  id: string
-  name: string
-  publishedAt: string | null
-  slug: string
-  func: string[]
-  updatedAt: string
-  socials: ISocial[]
-  technologies: ITechnologie[]
-  trajectories: ITrajectory[]
-  projects: IProject[]
+  bio: string;
+  createdAt: string;
+  id: string;
+  name: string;
+  publishedAt: string | null;
+  slug: string;
+  func: string[];
+  updatedAt: string;
+  socials: ISocial[];
+  technologies: ITechnologie[];
+  trajectories: ITrajectory[];
+  projects: IProject[];
 }
 
 interface IProject {
-  id?: string
-  name: string
-  slug: string
-  description?: string
-  demo?: string
-  sourceCode?: string
-  tags?: string[]
-  image: IImage
-  error?: number
+  id?: string;
+  name: string;
+  slug: string;
+  description?: string;
+  demo?: string;
+  sourceCode?: string;
+  tags?: string[];
+  image: IImage;
+  error?: number;
 }
 
 interface ISocial {
-  url: string
-  type: string
+  url: string;
+  type: string;
 }
 
 interface ITechnologie {
-  technologie: string
+  technologie: string;
 }
 
 interface IImage {
-  url: string
+  url: string;
 }
 
 interface ITrajectory {
-  role: string
-  start: string
-  finish: string
-  description: string
-  company: ICompany
+  role: string;
+  start: string;
+  finish: string;
+  description: string;
+  company: ICompany;
 }
 
 interface ICompany {
-  name: string
-  url: string
+  name: string;
+  url: string;
 }

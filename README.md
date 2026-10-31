@@ -29,19 +29,21 @@ Este portfólio foi desenvolvido para apresentar minha trajetória profissional,
 
 ### Pré-requisitos
 
-- Node.js 18+ 
+- Node.js 18+
 - npm ou yarn
 - Conta no Hygraph (ou outro CMS GraphQL compatível)
 
 ### Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone <url-do-repositorio>
 cd Portfolio
 ```
 
 2. Instale as dependências:
+
 ```bash
 npm install
 # ou
@@ -51,6 +53,7 @@ yarn install
 3. Configure as variáveis de ambiente (veja seção abaixo)
 
 4. Execute o servidor de desenvolvimento:
+
 ```bash
 npm run dev
 # ou
@@ -118,6 +121,7 @@ A forma mais fácil de fazer deploy é usando a [Vercel Platform](https://vercel
 ### Outras Plataformas
 
 O projeto também pode ser deployado em outras plataformas que suportam Next.js:
+
 - Netlify
 - AWS Amplify
 - Railway

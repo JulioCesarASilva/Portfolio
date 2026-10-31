@@ -1,65 +1,106 @@
-@font-face{
-  font-family:ftnk;
-  src:url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
-  font-weight:400;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: ftnk;
+  src:
+    url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?subset_id=2&fvd=n4&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/d?subset_id=2&fvd=n4&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/a?subset_id=2&fvd=n4&v=3)
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:ftnk;
-  src:url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
-  font-weight:700;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: ftnk;
+  src:
+    url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?subset_id=2&fvd=n7&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/d?subset_id=2&fvd=n7&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/a?subset_id=2&fvd=n7&v=3)
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:kwhz;
-  src:url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
-  font-weight:400;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: kwhz;
+  src:
+    url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/l?subset_id=2&fvd=n4&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/d?subset_id=2&fvd=n4&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/1eda8d/00000000000000007735a61d/30/a?subset_id=2&fvd=n4&v=3)
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:vcsm;
-  src:url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/a?subset_id=2&fvd=i4&v=3) format("opentype");
-  font-weight:400;
-  font-style:italic;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: vcsm;
+  src:
+    url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/l?subset_id=2&fvd=i4&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/d?subset_id=2&fvd=i4&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/3322cc/00000000000000007735e616/30/a?subset_id=2&fvd=i4&v=3)
+      format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:vcsm;
-  src:url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
-  font-weight:400;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: vcsm;
+  src:
+    url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/l?subset_id=2&fvd=n4&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/d?subset_id=2&fvd=n4&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/efe4a5/00000000000000007735e609/30/a?subset_id=2&fvd=n4&v=3)
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:vcsm;
-  src:url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/a?subset_id=2&fvd=n7&v=3) format("opentype");
-  font-weight:700;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: vcsm;
+  src:
+    url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/l?subset_id=2&fvd=n7&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/d?subset_id=2&fvd=n7&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/2555e1/00000000000000007735e603/30/a?subset_id=2&fvd=n7&v=3)
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
-@font-face{
-  font-family:vcsm;
-  src:url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/l?subset_id=2&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/d?subset_id=2&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/a?subset_id=2&fvd=n8&v=3) format("opentype");
-  font-weight:800;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+@font-face {
+  font-family: vcsm;
+  src:
+    url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/l?subset_id=2&fvd=n8&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/d?subset_id=2&fvd=n8&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/8738d8/00000000000000007735e611/30/a?subset_id=2&fvd=n8&v=3)
+      format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
 }
 
 html,
@@ -77,27 +118,28 @@ body {
 }
 
 body[data-color="COLOR-2"] {
-  --color-default: #C900E6;
+  --color-default: #c900e6;
 }
 
 body[data-color="COLOR-1"] {
-  --color-default: #9B0DFC;
+  --color-default: #9b0dfc;
 }
 
 body[data-color="COLOR-0"] {
-  --color-default: #560CF2;
+  --color-default: #560cf2;
 }
 
-
-span, p, a {
+span,
+p,
+a {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  font-family: 'kwhz', sans-serif;
+  font-family: "kwhz", sans-serif;
 }
 
 h1 {
-  font-family: 'kwhz', sans-serif;
+  font-family: "kwhz", sans-serif;
 }
 
 @-webkit-keyframes fade-in {
@@ -118,15 +160,16 @@ h1 {
 }
 
 .fade-in {
-  -webkit-animation: fade-in 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-          animation: fade-in 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .MuiTimelineItem-root::before {
   content: none !important;
 }
 
-.MuiTimelineItem-root h5, .MuiTimelineItem-root span {
+.MuiTimelineItem-root h5,
+.MuiTimelineItem-root span {
   font-size: 14px;
   line-height: 20px;
   text-transform: capitalize;
@@ -161,7 +204,8 @@ h1 {
   list-style-type: none;
 }
 
-.MuiTimelineDot-root, .MuiTimelineConnector-root {
+.MuiTimelineDot-root,
+.MuiTimelineConnector-root {
   background: var(--color-default) !important;
   transition: 1s all;
 }

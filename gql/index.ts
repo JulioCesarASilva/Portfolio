@@ -1,45 +1,45 @@
-import { gql } from "@apollo/client"
+import { gql } from "@apollo/client";
 
 const GET_ALL_AUTHORS = gql`
-    query GetAuthors {
-      authors {
-        bio
-        createdAt
-        id
+  query GetAuthors {
+    authors {
+      bio
+      createdAt
+      id
+      name
+      publishedAt
+      slug
+      updatedAt
+      technologies(first: 100) {
+        technologie
+      }
+      projects {
         name
-        publishedAt
         slug
-        updatedAt
-        technologies (first: 100){
-          technologie
+        image {
+          url
         }
-        projects {
-          name
-          slug
-          image {
+      }
+      func
+      trajectories {
+        role
+        start
+        finish
+        description
+        company {
+          ... on Company {
+            name
             url
-          }
-        }
-        func
-        trajectories {
-          role
-          start 
-          finish
-          description
-          company {
-            ... on Company {
-              name
-              url
-            }
           }
         }
       }
     }
-  `
+  }
+`;
 
 const GET_PROJECT = gql`
   query GetProject($slug: String) {
-    project(where: {slug: $slug}) {
+    project(where: { slug: $slug }) {
       demo
       description
       id
@@ -52,7 +52,7 @@ const GET_PROJECT = gql`
       }
     }
   }
-`
+`;
 
 const GET_ALL_PROJECTS_SLUGS = gql`
   query GetAllProjectsSlugs {
@@ -60,6 +60,6 @@ const GET_ALL_PROJECTS_SLUGS = gql`
       slug
     }
   }
-`
+`;
 
-export { GET_ALL_AUTHORS, GET_PROJECT, GET_ALL_PROJECTS_SLUGS }
+export { GET_ALL_AUTHORS, GET_PROJECT, GET_ALL_PROJECTS_SLUGS };

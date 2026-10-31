@@ -4,15 +4,15 @@ import { List, X } from "phosphor-react";
 import style from "../../styles/Header.module.css";
 import global from "../../styles/Global.module.css";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
-import { Icons } from "./icons"
+import { Icons } from "./icons";
 
 export default function Header() {
   const [scroll, setScroll] = useState<boolean>();
   const [open, setOpen] = useState<boolean>(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     window.addEventListener("scroll", handleNavigation);
@@ -35,7 +35,7 @@ export default function Header() {
         behavior: "smooth",
       });
     else {
-      router.push((e.target as any).getAttribute("href"))
+      router.push((e.target as any).getAttribute("href"));
     }
   };
 
@@ -73,11 +73,8 @@ export default function Header() {
     document.body.classList.toggle(style.isOpen);
   }, [open]);
 
-
   return (
-    <header
-      className={`${style.header} ${scroll ? style.scrollOff : ""}`}
-    >
+    <header className={`${style.header} ${scroll ? style.scrollOff : ""}`}>
       <div className={global.container}>
         <div className={`${style["menu-mobile"]}`}>
           <List size={30} onClick={() => setOpen(true)} />

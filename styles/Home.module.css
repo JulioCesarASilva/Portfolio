@@ -1,199 +1,198 @@
 .particles {
-    height: 100vh;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .particles div:first-child {
-    height: 100%;
-    width: 100%;
-    display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 .particles .info {
-    position: absolute;
-    z-index: 5;
-    color: var(--color-white-dark);
-    transition: 1s all;
+  position: absolute;
+  z-index: 5;
+  color: var(--color-white-dark);
+  transition: 1s all;
 }
 
 .particles h1 {
-    font-size: 65px;
-    font-style: normal;
-    line-height: 75px;
+  font-size: 65px;
+  font-style: normal;
+  line-height: 75px;
 }
 
 .particles p {
-    font-size: 26px;
-    display: flex;
-    column-gap: 10px;
+  font-size: 26px;
+  display: flex;
+  column-gap: 10px;
 }
 
 .particles p span {
-    text-decoration: underline;
-    text-decoration-color: var(--color-default);
-    transition: 1s all;
+  text-decoration: underline;
+  text-decoration-color: var(--color-default);
+  transition: 1s all;
 }
-
 
 .section {
-    /*height: 100vh; */
-    padding-top: 70px;
-    padding-left: 3%;
-    padding-right: 3%;
+  /*height: 100vh; */
+  padding-top: 70px;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
-.section.contato svg, .section.contato a {
-    height: 60px;
-    width: 80px;
-    color: var(--color-default);
-    transition: 1s all;
+.section.contato svg,
+.section.contato a {
+  height: 60px;
+  width: 80px;
+  color: var(--color-default);
+  transition: 1s all;
 }
 
 .section.contato .icons {
-    justify-content: center !important;
+  justify-content: center !important;
 }
 
 .section:last-child {
-    padding-bottom: 150px;
+  padding-bottom: 150px;
 }
 
 .section h2 {
-    font-size: 32px;
-    line-height: 35px;
-    font-family: kwhz, sans-serif;
-    margin-bottom: 40px;
-    color: var(--color-default);
-    transition: 1s all;
+  font-size: 32px;
+  line-height: 35px;
+  font-family: kwhz, sans-serif;
+  margin-bottom: 40px;
+  color: var(--color-default);
+  transition: 1s all;
 }
 
 .section div p {
-    font-family: vcsm, sans-serif;
-    color: rgb(59, 59, 59);
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
+  font-family: vcsm, sans-serif;
+  color: rgb(59, 59, 59);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
 }
 
 .section div p:not(:last-child) {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .project :global(.list) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
 }
 
 .project :global(.list) .project-item .project-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .project :global(.list) .project-item {
-    transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-
 .project :global(.list) .project-item .details-wrap {
-    position: absolute;
-    opacity: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .project :global(.list) .project-item:hover .details-wrap {
-    opacity: 1;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(15px) saturate(160%) brightness(130%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(15px) saturate(160%) brightness(130%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project :global(.list) .project-item .cover-image-wrap .cover {
-    display: flex;
+  display: flex;
 }
 
 .project :global(.list) .project-item .cover-image-wrap img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .project :global(.list) .project-item .details-title {
-    color: #FFF;
-    font-size: 24px;
-    line-height: 13px;
-    padding-top: 13px;
-    font-family: kwhz, sans-serif;
+  color: #fff;
+  font-size: 24px;
+  line-height: 13px;
+  padding-top: 13px;
+  font-family: kwhz, sans-serif;
 }
 
 @media (max-width: 768px) {
-    .project :global(.list) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .project :global(.list) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 540px) {
-    .project :global(.list) {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .project :global(.list) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-
-
 
 .tech-slideshow {
-    height: 100px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    margin-left: -3%;
-    margin-right: -3%;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  margin-left: -3%;
+  margin-right: -3%;
 }
 
-.tech-slideshow>div {
-    height: 100%;
-    display: flex;
-    width: fit-content;
-    transform: translate3d(0, 0, 0);
-    animation: moveSlideshow 50s linear infinite;
+.tech-slideshow > div {
+  height: 100%;
+  display: flex;
+  width: fit-content;
+  transform: translate3d(0, 0, 0);
+  animation: moveSlideshow 50s linear infinite;
 }
 
 .tech-slideshow > div :is(img, object) {
-    height: 100px;
-    margin: 0 30px;
-    filter: grayscale(100%);
-    transition: filter 0.1s ease-out;
+  height: 100px;
+  margin: 0 30px;
+  filter: grayscale(100%);
+  transition: filter 0.1s ease-out;
 }
 
-.tech-slideshow > div  :is(img, object):hover {
-    filter: grayscale(0);
+.tech-slideshow > div :is(img, object):hover {
+  filter: grayscale(0);
 }
 
 @keyframes moveSlideshow {
-    100% {
-        transform: translateX(-50%);
-    }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 768px) {
-    .tech-slideshow{
-        height: 80px;
-    }
-    .tech-slideshow>div {
-        height: 80px;
-    }
-    .tech-slideshow>div img {
-        height: 80px;
-        margin: 0 10px;
-    }
-    .tech-slideshow > div  :is(img, object) {
-        filter: grayscale(0);
-    }
+  .tech-slideshow {
+    height: 80px;
+  }
+  .tech-slideshow > div {
+    height: 80px;
+  }
+  .tech-slideshow > div img {
+    height: 80px;
+    margin: 0 10px;
+  }
+  .tech-slideshow > div :is(img, object) {
+    filter: grayscale(0);
+  }
 }
