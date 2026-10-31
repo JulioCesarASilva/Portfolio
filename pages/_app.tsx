@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import useAccentColor from "../hooks/useAccentColor";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 
@@ -8,23 +8,7 @@ import "../styles/globals.css";
 import Footer from "../Components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    if (document) {
-      document.body.setAttribute(
-        "data-color",
-        `COLOR-${Math.floor(Math.random() * 3)}`,
-      );
-
-      const interval = setInterval(() => {
-        document.body.setAttribute(
-          "data-color",
-          `COLOR-${Math.floor(Math.random() * 3)}`,
-        );
-      }, 5 * 5000);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
+  useAccentColor();
 
   return (
     <>
