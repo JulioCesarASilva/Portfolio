@@ -1,3 +1,4 @@
+import SEO from "../Components/SEO";
 import { GetServerSideProps } from "next";
 import { queryGraphQL } from "../lib/graphql";
 import { GET_ALL_AUTHORS } from "../gql";
@@ -11,6 +12,11 @@ import SectionTrajetoria from "../Components/Sections/trajetoria";
 export default function Home({ author }: { author: IAuthor }) {
   return (
     <>
+      <SEO
+        title={`${author.name} | Desenvolvedor Fullstack`}
+        description={author.bio}
+        path="/"
+      />
       <main>
         <SectionInicio func={author.func} name={author.name} />
         <SectionSobre bio={author.bio} />

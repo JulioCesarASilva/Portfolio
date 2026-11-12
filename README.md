@@ -152,3 +152,14 @@ Partículas usam Canvas com limite de 100 pontos e densidade ajustada à tela. A
 As consultas ao CMS usam `fetch` no servidor, com timeout de 10 segundos e sem cache compartilhado. A página inicial mantém SSR e os projetos mantêm ISR de 60 segundos. HTML e Markdown passam pela mesma sanitização antes de renderizar; scripts, handlers, estilos inline e protocolos inseguros são removidos.
 
 O ESLint usa plugins específicos de Next e React Hooks, sem o conjunto legado de plugins de importação. A resolução de `minimatch` força a linha corrigida 11 (GHSA-g3hv-75wg-m249), que mantém os exports usados pelo ESLint e TypeScript ESLint. Reavalie essa resolução ao atualizar essas ferramentas.
+
+### Domínio e SEO
+
+Configure `NEXT_PUBLIC_SITE_URL` no ambiente de produção com o domínio público definitivo
+(por exemplo, `https://seu-dominio.com`). Reinicie ou faça um novo deploy após a alteração.
+Essa variável define as URLs canônicas, o endereço Open Graph e o domínio do sitemap.
+Sem ela, as páginas mantêm títulos e descrições, mas omitem URLs canônicas e o sitemap
+retorna HTTP 503 para evitar publicar um domínio incorreto.
+
+O sitemap em `/sitemap.xml` inclui a home, `/projetos` e os projetos publicados no Hygraph.
+O `/robots.txt` informa seu endereço. Após o deploy, envie o sitemap ao Google Search Console.

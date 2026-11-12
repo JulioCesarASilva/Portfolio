@@ -1,7 +1,7 @@
 import React from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Error from "next/error";
-import Head from "next/head";
+import SEO from "../../Components/SEO";
 import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 
@@ -36,35 +36,23 @@ export default function Project(props: IProject) {
   }
 
   const pageTitle = `${props.name} | Projeto`;
-  const pageDescription = props.description
-    ? props.description.substring(0, 160) +
-      (props.description.length > 160 ? "..." : "")
-    : `Confira o projeto ${props.name}`;
+  const pageDescription =
+    props.description || `Confira o projeto ${props.name}`;
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        {props.image?.url && (
-          <meta property="og:image" content={props.image.url} />
-        )}
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        {props.image?.url && (
-          <meta name="twitter:image" content={props.image.url} />
-        )}
-      </Head>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        path={`/project/${encodeURIComponent(props.slug)}`}
+        image={props.image?.url}
+      />
       <div className={global.top}>
         <section className={`${styles.section}`}>
           <div
             className={`${global.container} ${project.container} ${global.aux}`}
           >
-            <Link href="/#projetos" className={project.backButton}>
+            <Link href="/projetos" className={project.backButton}>
               Voltar para projetos
             </Link>
 
