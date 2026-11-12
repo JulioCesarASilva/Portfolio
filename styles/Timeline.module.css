@@ -41,6 +41,14 @@
   font-size: 18px;
   line-height: 24px;
 }
+.timeline .item .description,
+.timeline .item .description p {
+  font-size: 19px;
+  line-height: 27px;
+}
+.timeline .item .description p:not(:last-child) {
+  margin-bottom: 10px;
+}
 .item ul,
 .item ol {
   padding-left: 20px;

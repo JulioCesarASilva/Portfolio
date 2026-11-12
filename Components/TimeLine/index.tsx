@@ -33,7 +33,7 @@ export default function Timeline({
               "Até o momento"
             )}
           </p>
-          <RichText content={item.description} />
+          <RichText content={item.description} className={styles.description} />
         </li>
       ))}
     </ol>
