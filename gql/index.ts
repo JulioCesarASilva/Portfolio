@@ -11,9 +11,11 @@ const GET_ALL_AUTHORS = `
         technologies (first: 100){
           technologie
         }
-        projects {
+        projects(first: 1000) {
           name
           slug
+          description
+          tags
           image {
             url
           }
@@ -54,7 +56,7 @@ const GET_PROJECT = `
 
 const GET_ALL_PROJECTS_SLUGS = `
   query GetAllProjectsSlugs {
-    projects {
+    projects(first: 1000) {
       slug
     }
   }
