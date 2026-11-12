@@ -100,17 +100,35 @@
 
 .project :global(.list) .project-item .details-wrap {
   position: absolute;
+  inset: 0;
   opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(15px) saturate(160%) brightness(65%);
+  backdrop-filter: blur(15px) saturate(160%) brightness(65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project :global(.list) .project-item:hover .details-wrap {
   opacity: 1;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(15px) saturate(160%) brightness(130%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project :global(.list) .project-item .details-wrap {
+    transition: none;
+  }
+}
+
+.project :global(.list) .project-item .details-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-default);
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .project :global(.list) .project-item .cover-image-wrap .cover {
@@ -125,8 +143,9 @@
 .project :global(.list) .project-item .details-title {
   color: #fff;
   font-size: 24px;
-  line-height: 13px;
-  padding-top: 13px;
+  line-height: 1.2;
+  padding: 0 16px;
+  text-align: center;
   font-family: kwhz, sans-serif;
 }
 
